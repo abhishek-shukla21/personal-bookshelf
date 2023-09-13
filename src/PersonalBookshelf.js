@@ -16,6 +16,7 @@ function PersonalBookshelf() {
       <Link to="/">
         <button className="button-search">Back to Search</button>
       </Link>
+      <br />
       <div className="bookshelf">
         {personalBookshelf.map((book) => (
           <div className="book-card" key={book.key}>

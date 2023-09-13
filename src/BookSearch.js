@@ -62,7 +62,6 @@ function BookSearch() {
       <Link to="/bookshelf">
         <button className="button-bookshelf">My Bookshelf</button>
       </Link>
-      <p> <button className='button-bookshelf'><a href='/bookshelf'> My BookShelf</a></button> </p>
       <div className="search-results">
         {searchResults.map((book) => (
           <div className="card" key={book.key}>
