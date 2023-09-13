@@ -1,36 +1,29 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './PersonalBookshelf.css';
 
 function PersonalBookshelf() {
   const [personalBookshelf, setPersonalBookshelf] = useState([]);
 
   useEffect(() => {
-    // Load the user's personal bookshelf from localStorage when the component mounts
     const savedBookshelf = JSON.parse(localStorage.getItem('bookshelf')) || [];
     setPersonalBookshelf(savedBookshelf);
   }, []);
 
-  const handleRemoveFromBookshelf = (book) => {
-    const updatedBookshelf = personalBookshelf.filter((item) => item.key !== book.key);
-    setPersonalBookshelf(updatedBookshelf);
-    localStorage.setItem('bookshelf', JSON.stringify(updatedBookshelf));
-  };
-
   return (
-    <div>
-      <h1>Personal Bookshelf Page</h1>
-      <p>View the <a href="/">book search page</a></p>
-      <ul>
+    <div className="container">
+      <h1>My Bookshelf</h1>
+      <Link to="/">
+        <button className="button-search">Back to Search</button>
+      </Link>
+      <div className="bookshelf">
         {personalBookshelf.map((book) => (
-          <li key={book.key}>
-            <div>
-              <h3>{book.title}</h3>
-              <p>Author: {book.author_name}</p>
-              <p>Published: {book.first_publish_year}</p>
-              <button onClick={() => handleRemoveFromBookshelf(book)}>Remove from Bookshelf</button>
-            </div>
-          </li>
+          <div className="book-card" key={book.key}>
+            <h3>{book.title}</h3>
+            <p>Edition Count: {book.edition_count}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

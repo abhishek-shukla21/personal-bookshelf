@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .search-input {
+    margin-bottom: 20px;
+  }
+  
+  .button-bookshelf {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-bookshelf:hover {
+    background-color: #0056b3;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .card button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  .search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    background-color: #f5f5f5;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 16px);
+    box-sizing: border-box; 
+    text-align: center;
+  }
+  
+  .card h3 {
+    margin: 0;
+  }
+  
+  .card p {
+    margin-top: 8px;
+  }
+  
